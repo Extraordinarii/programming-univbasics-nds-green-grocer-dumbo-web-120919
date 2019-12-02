@@ -39,9 +39,10 @@ end
   
 def first_order(coupon) #we have to pass an arg and then take the item and round it out 
   rounding = (coupon[:cost].to_f * 1.0 / coupon[:num].round(2))
-
-
-  
+  { :item => "#{coupon[:item]} W/COUPON",
+  :price => rounding,
+  :count => coupon[:num]
+  }
 end
 
 def apply_coupons(cart, coupons)
