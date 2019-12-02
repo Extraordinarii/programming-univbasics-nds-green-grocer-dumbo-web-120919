@@ -35,27 +35,21 @@ def consolidate_cart(cart)
   end 
   result
 end
-  #Create a first order method once we finish and redo the apply_coupons. 
-  
-def first_order(coupon) #we have to pass an arg and then take the item and round it out 
-  rounding = (coupon[:cost].to_f * 1.0 / coupon[:num].round(2))
-  { 
-  :item => "#{coupon[:item]} W/COUPON",
-  :price => rounding,
-  :count => coupon[:num]
-  }
-end
 
 def apply_coupons(cart, coupons)
-  
 
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  counter = 0 
-  while counter < coupons.length
-  cart_item = find_item_by_name_in_collection(coupons[counter][:item], cart)
-  coupon 
+  coupon_counter = 0 
+  while coupon_counter < coupons.length
+  cart_index = 0 #goes through items inside the cart ie; items inside the cart 
+  while cart_index < cart.length do 
+    if coupons[coupon_counter][:item] == cart[cart_index][:item] && coupons[coupon_counter][:num] <= cart[cart_index][:count]
+      cart[cart_index][:count] -= coupons[coupon_counter][:num]
+      
+ 
+ 
 end
 
 def apply_clearance(cart)
