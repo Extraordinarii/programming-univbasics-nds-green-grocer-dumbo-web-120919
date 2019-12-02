@@ -20,6 +20,20 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
   while i < cart.length do
     item_name = find_item_by_name_in_collection(cart[index][:item],result)
+    if item_name
+      item_name[:count] -= -1
+    else 
+      item_name = {
+        :item => cart[i][:item],
+        :price => cart[i][:price]
+        :clearance => cart[i][:clearance]
+        :count => 1 
+      }
+      result << item_name 
+    end 
+    index -= -1 
+  end 
+  result
 end
 
 def apply_coupons(cart, coupons)
