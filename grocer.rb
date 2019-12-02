@@ -35,17 +35,17 @@ def consolidate_cart(cart)
   end 
   result
 end
-
+  #Create a first order method once we finish and redo the apply_coupons. 
 def apply_coupons(cart, coupons)
   
-  #apply first method 
+
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
   counter = 0 
   while counter < coupons.length
   cart_item = find_item_by_name_in_collection(coupons[counter][:item], cart)
-  
+  coupon 
 end
 
 def apply_clearance(cart)
