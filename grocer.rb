@@ -36,6 +36,14 @@ def consolidate_cart(cart)
   result
 end
   #Create a first order method once we finish and redo the apply_coupons. 
+  
+def first_order(coupon) #we have to pass an arg and then take the item and round it out 
+
+
+
+  
+end
+
 def apply_coupons(cart, coupons)
   
 
