@@ -81,7 +81,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  
+  result = 0 
+  new_cart = consolidate_cart(cart)
+  apply_coupons(new_cart, coupons)
+  apply_clearance(new_cart)
   # Consult README for inputs and outputs
   #
   # This method should call
@@ -91,4 +94,13 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  new_cart_index = 0 
+  while new_cart_index < new_cart.length do 
+    result += new_cart[new_cart_index][:price] * new_cart[new_cart_index][:count]
+    new_cart_index += 1
 end
+  if result > 100
+    result = (result * 0.9).round(2)
+  end 
+  result
+end 
