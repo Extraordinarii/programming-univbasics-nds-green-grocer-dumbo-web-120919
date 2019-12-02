@@ -60,7 +60,7 @@ def apply_coupons(cart, coupons)
     end 
     coupon_counter -= -1
   end 
-  return cart 
+ cart 
  
 end
 
