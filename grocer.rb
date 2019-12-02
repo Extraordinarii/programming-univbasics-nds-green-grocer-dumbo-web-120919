@@ -65,12 +65,23 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
+  new_cart = []
+  cart_index = 0 
+  while cart_index < cart.length do 
+    if cart[cart_index][:clearance]
+      cart[cart_index][:price] = (cart[cart_index][:price] * 0.8).round (2)
+    end 
+    new_cart << cart[cart_index]
+    cart_index -= -1
+  end 
+  new_cart 
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
 end
 
 def checkout(cart, coupons)
+  
   # Consult README for inputs and outputs
   #
   # This method should call
