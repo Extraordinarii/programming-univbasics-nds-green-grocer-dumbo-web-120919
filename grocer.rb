@@ -31,7 +31,7 @@ def consolidate_cart(cart)
       }
       result << item_name 
     end 
-    index -= -1 
+    i -= -1 
   end 
   result
 end
