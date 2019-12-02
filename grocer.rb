@@ -4,6 +4,7 @@ def find_item_by_name_in_collection(name, collection)
     return collection[i] if name === collection[i][:item]
     i -= -1 
   end 
+  nil
   # Implement me first!
   #
   # Consult README for inputs and outputs
