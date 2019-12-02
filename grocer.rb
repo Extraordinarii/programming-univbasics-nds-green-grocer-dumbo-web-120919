@@ -38,9 +38,9 @@ end
   #Create a first order method once we finish and redo the apply_coupons. 
   
 def first_order(coupon) #we have to pass an arg and then take the item and round it out 
-  rounding = (coupon[:cost].to_f * 1.0 / coupon[:num].round(2)
+  rounding = (coupon[:cost].to_f * 1.0 / coupon[:num].round(2))
   { 
-    :item => "#{coupon[:item]} W/COUPON",
+  :item => "#{coupon[:item]} W/COUPON",
   :price => rounding,
   :count => coupon[:num]
   }
@@ -53,7 +53,7 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   counter = 0 
- # while counter < coupons.length
+  while counter < coupons.length
   cart_item = find_item_by_name_in_collection(coupons[counter][:item], cart)
   coupon 
 end
